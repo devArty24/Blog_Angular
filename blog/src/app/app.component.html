@@ -1,12 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -309,15 +300,18 @@
 <!-- Charge component slider -->
 <app-slider></app-slider>
 
-<!-- test with components -->
+<!-- Format conetent -->
 <div class="center">
   <section id="content">
 
-    <mi-componente></mi-componente>
+    <!-- Directive especial to use routes -->
+    <router-outlet></router-outlet>
+
   </section>
 
   <!-- Charge component sidebar -->
   <app-sidebar></app-sidebar>
 </div>
 
+<!-- Charge component footer -->
 <app-footer></app-footer>
