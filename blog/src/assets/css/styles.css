@@ -158,14 +158,18 @@ body{
     color: white;
 }
 
-#slider .slider-small{
+.slider-small{
     height: 150px !important;
 }
 
-#slider .slider-small h1{
+#slider, .slider-small h1{
     margin-top:0.2px;
     padding:0px;
-    padding-top: 53px;
+    padding-top: 35px !important;
+}
+
+.slider-big{
+    height: 310px !important;
 }
 
 #content{

@@ -1,4 +1,8 @@
-<div class="slider-big" id="slider">
-    <h1>Bienvenido al Blog en Angular</h1>
-    <a class="btn-white" href="#">Ir al blog</a>
+<div id="slider" [ngClass]="{
+    'slider-big': !size || size == 'big',
+    'slider-small': size == 'small'
+}">
+    <!-- Print prop nombre that is declared in the file slider.component.ts -->
+    <h1>{{nombre}}</h1>
+    <a class="btn-white" href="#" *ngIf="!size || size == 'big'" [routerLink]="['/blog']">Ir al blog</a>
 </div>

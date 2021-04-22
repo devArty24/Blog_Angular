@@ -1,48 +1,62 @@
-<h1 class="subhedaer">Peliculas</h1>
+<!-- Charge component slider with prop input nombre and homeText -->
+<app-slider
+  [nombre]="'Peliculas'"
+  [size]="'small'"
+></app-slider>
 
-<h2>{{titulo}}</h2>
-<button (click)="cambiarTitulo()">Pulsame</button>
-<hr>
+<!-- Format conetent -->
+<div class="center">
+    <section id="content">
 
-<h2>Mostar primera pelicula</h2>
-{{peliculas[0].title}}
+        <!-- Print info of event Output -->
+        <div id="favorita" *ngIf="favorita">
+            <h2 class="subheader">Pelicula favorita</h2>
+            <h4>
+                {{favorita.title}}
+            </h4>
 
-<hr>
-
-<h2>Numero de peliculas</h2>
-<div *ngIf="peliculas.length <= 3">
-    Hay pocas peliculas
-</div>
-
-<div *ngIf="peliculas.length > 3">
-    Hay pocas peliculas
-</div>
-
-{{peliculas.length}}
-
-<hr>
-
-<h2 class="subhedaer">Listado de peliculas</h2>
-
-<!-- ngIf -->
-<div id="articles" *ngIf="peliculas">
-    <!-- ngFor -->
-    <article class="article-item" *ngFor="let pelicula of peliculas; let i = index;">
-        <div class="image-wrap">
-            <img src="{{pelicula.image}}" alt="{{pelicula.title}}"/>
+            <h5>{{favorita.year}}</h5>
         </div>
 
-        <h2>{{pelicula.title}}</h2>
-        <span class="date">Hace 5 minutos</span>
-        
-        <!-- ngClass -->
-        <span class="year" [ngClass]="{
-                                'year-green': pelicula.year > 2016,
-                                'year-red': pelicula.year < 2016
-                            }">
-            {{pelicula.year}}
-        </span>
-        <a href="">Leer mas</a>
-        <div class="clearfix"></div>
-    </article>
+        <h1 class="subhedaer">Peliculas</h1>
+
+        <!-- <h2>{{titulo}}</h2>
+        <button (click)="cambiarTitulo()">Pulsame</button>
+        <hr>
+
+        <h2>Mostar primera pelicula</h2>
+        {{peliculas[0].title}}
+
+        <hr>
+
+        <h2>Numero de peliculas</h2>
+        <div *ngIf="peliculas.length <= 3">
+            Hay pocas peliculas
+        </div>
+
+        <div *ngIf="peliculas.length > 3">
+            Hay pocas peliculas
+        </div>
+
+        {{peliculas.length}}
+
+        <hr>
+
+        <h2 class="subhedaer">Listado de peliculas</h2> -->
+
+        <!-- ngIf -->
+        <div id="articles" *ngIf="peliculas">
+            <div *ngFor="let pelicula of peliculas; let i = index;">
+                <!-- Pass a event marcarFavorita that is a prop output 
+                    declaraded in component pelicula -->
+                <app-pelicula [pelicula]="pelicula"
+                            (marcarFavorita)="mostrarFavorita($event)"
+                ></app-pelicula>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Charge component sidebar -->
+    <app-sidebar></app-sidebar>
 </div>

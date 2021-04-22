@@ -1,19 +1,30 @@
-<h1 class="subheader">Pagina de pruebas</h1>
+<!-- Charge component slider with prop input nombre and homeText -->
+<app-slider
+  [nombre]="'Pagina'"
+></app-slider>
 
-<!-- ngIf and else -->
-<div *ngIf="nombre && apellidos; then siHayParametros else noHayParametros">
+<!-- Format conetent -->
+<div class="center">
+    <section id="content">
+        <h1 class="subheader">Pagina de pruebas</h1>
+
+        <!-- ngIf and else -->
+        <div *ngIf="nombre && apellidos; then siHayParametros else noHayParametros"></div>
+
+        <!-- ng-template if -->
+        <ng-template #siHayParametros>
+            <h2>El nombre es: {{nombre}}</h2>
+            <h2>El apellido es: {{apellidos}}</h2>
+        </ng-template>
+
+        <!-- ng-template else -->
+        <ng-template #noHayParametros>
+            <h2>No hay parametros por la url</h2>
+        </ng-template>
+
+        <button (click)="redireccion()">Escribe el nombre y apelldios</button>
+    </section>
+
+    <!-- Charge component sidebar -->
+    <app-sidebar></app-sidebar>
 </div>
-
-<!-- ng-template if -->
-<ng-template #siHayParametros>
-    <h2>El nombre es: {{nombre}}</h2>
-    <h2>El apellido es: {{apellidos}}</h2>
-</ng-template>
-
-<!-- ng-template else -->
-<ng-template #noHayParametros>
-    <h2>No hay parametros por la url</h2>
-</ng-template>
-
-
-<button (click)="redireccion()">Escribe el nombre y apelldios</button>
