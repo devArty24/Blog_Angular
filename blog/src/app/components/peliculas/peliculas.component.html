@@ -12,10 +12,14 @@
         <div id="favorita" *ngIf="favorita">
             <h2 class="subheader">Pelicula favorita</h2>
             <h4>
-                {{favorita.title}}
+                <!-- Print favorita.title with a pipe -->
+                {{favorita.title | lowercase}}
             </h4>
 
-            <h5>{{favorita.year}}</h5>
+            <h5>{{favorita.year | espar}}</h5>
+
+            <!-- Other pipe, you can search more pipe in page web angular -->
+            <h5>{{this.fecha | date: 'short'}}</h5>
         </div>
 
         <h1 class="subhedaer">Peliculas</h1>
