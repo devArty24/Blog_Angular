@@ -22,6 +22,9 @@ import { PeliculaComponent } from './components/pelicula/pelicula.component';
 // Import Pipes Customised
 import {EsParPipe} from './pipes/espar.pipe';
 
+// Import module form
+import {FormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +46,8 @@ import {EsParPipe} from './pipes/espar.pipe';
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    FormsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
