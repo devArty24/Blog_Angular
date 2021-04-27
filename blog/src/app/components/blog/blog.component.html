@@ -9,6 +9,18 @@
     <section id="content">
         <h1 class="subheder">Blog</h1>
 
+        <div id="articles" *ngFor="let article of articles">
+          <article class="article-item" id="article-template">
+              <div class="image-wrap">
+                  <img alt="{{article.title}}" *ngIf="article.image" src="{{url+'/get-image/'+article.image}}"/>
+                  <img alt="{{article.title}}" *ngIf="!article.image" src="assets/images/default.png"/>
+              </div>
+              <h2>{{article.title}}</h2>
+              <span class="date">{{article.date}}</span>
+              <a href="#">Leer mas</a>
+              <div class="clearfix"></div>
+          </article>
+      </div> 
     </section>
 
     <!-- Charge component sidebar -->
