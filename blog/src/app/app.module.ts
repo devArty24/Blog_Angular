@@ -27,6 +27,12 @@ import {FormsModule} from '@angular/forms';
 
 // Import Http module
 import {HttpClientModule} from '@angular/common/http';
+import { ArticlesComponent } from './components/articles/articles.component';
+
+// Import module of angular2
+import {MomentModule} from 'angular2-moment';
+import { ArticleComponent } from './components/article/article.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -45,13 +51,17 @@ import {HttpClientModule} from '@angular/common/http';
     PaginaComponent,
     ErrorComponent,
     PeliculaComponent,
-    EsParPipe
+    EsParPipe,
+    ArticlesComponent,
+    ArticleComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MomentModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

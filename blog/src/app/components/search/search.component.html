@@ -1,0 +1,19 @@
+<!-- Charge component slider with prop input nombre and homeText -->
+<app-slider
+  [nombre]="'Busqueda: '+ search"
+  [size]="'small'"
+></app-slider>
+
+<!-- Format conetent -->
+<div class="center">
+    <section id="content">
+        <h1 class="subheder">Articulos encontrados</h1>
+
+        <app-articles
+            [articles]="articles"
+        ></app-articles>
+    </section>
+
+    <!-- Charge component sidebar -->
+    <app-sidebar></app-sidebar>
+</div>
