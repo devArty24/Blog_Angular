@@ -1,8 +1,8 @@
 <!-- Format conetent -->
-<div class="center" *ngIf="article">
+<div class="center">
     <section id="content">
         
-        <article class="article-item article-detail">
+        <article class="article-item article-detail" *ngIf="article">
             <div class="image-wrap">
                 <img alt="{{article.title}}" *ngIf="article.image" src="{{url+'/get-image/'+article.image}}"/>
                 <img alt="{{article.title}}" *ngIf="!article.image" src="assets/images/default.png"/>    
@@ -12,7 +12,7 @@
             <p>{{article.content}}</p>
 
             <dib class="buttons">
-                <a class="btn btn-warning" href="">Editar</a>
+                <a class="btn btn-warning" [routerLink]="['/blog/editar', article._id]">Editar</a>
                 <a class="btn btn-danger" href="">Borrar</a>
             </dib>
 

@@ -264,13 +264,24 @@ body{
     font-size: 17px;
 }
 
-input[type="text"], textarea{
+input[type="text"], input[type="file"], textarea{
     width: 100%;
     min-height: 30px;
     border: 1px solid #ccc;
     padding:3px;
     margin-bottom: 5px;
     transition: 300ms all;
+}
+
+.btn.up_btn.afu-attach-pin{
+    display: block !important;
+    width: 100% !important;
+    max-width: 90% !important;
+    margin-top: 15px;
+}
+
+.image-thumb img{
+    width: 150px;
 }
 
 input[type="text"]:focus, textarea:focus{
