@@ -12,6 +12,8 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 // Import url Global
 import {Global} from '../../services/global';
 
+import swal from 'sweetalert';
+
 @Component({
   selector: 'app-article-edit',
   templateUrl: '../article-new/article-new.component.html',
@@ -72,6 +74,14 @@ export class ArticleEditComponent implements OnInit {
           console.log(response);
           this.status = "success";
           this.article = response.article;
+
+          // Alert
+          swal(
+            'Articulo editado!!',
+            'El articulo se edito correctamente',
+            'success'
+          );
+
           this._router.navigate(['/blog/articulo', this.article._id]);
         }else{
           this.status = "error";
@@ -80,6 +90,13 @@ export class ArticleEditComponent implements OnInit {
       error => {
         console.log(error);
         this.status = "error";
+
+        // Alert
+        swal(
+          'Edicion fallida!!',
+          'El articulo no sepudo editar',
+          'error'
+        );
       }
     );
   }

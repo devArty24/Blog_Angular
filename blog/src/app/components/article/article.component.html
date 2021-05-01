@@ -13,7 +13,7 @@
 
             <dib class="buttons">
                 <a class="btn btn-warning" [routerLink]="['/blog/editar', article._id]">Editar</a>
-                <a class="btn btn-danger" href="">Borrar</a>
+                <a class="btn btn-danger" (click)="delete(article._id)">Borrar</a>
             </dib>
 
             <div class="clearfix"></div>

@@ -12,6 +12,9 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 // Import url Global
 import {Global} from '../../services/global';
 
+// Import sweetAlert
+import swal from 'sweetalert';
+
 @Component({
   selector: 'app-article-new',
   templateUrl: './article-new.component.html',
@@ -68,6 +71,16 @@ export class ArticleNewComponent implements OnInit {
         if(response.status == "success"){
           this.status = "success";
           this.article = response.article;
+
+          // Alert
+          swal(
+            'Articulo creado!!',
+            'El articulo se a creado correctamente',
+            'success'
+
+          );
+
+
           this._router.navigate(['/blog']);
         }else{
           this.status = "error";
